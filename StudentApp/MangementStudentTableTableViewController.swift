@@ -129,7 +129,7 @@ class MangementStudentTableTableViewController: UITableViewController, UISearchB
     }
     //show detail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "ShowDetail") {
+        if (segue.identifier == "detail") {
             
             let studentDetailVC = segue.destination as! StudentDetailTableViewController
             if let indexPath = self.tableView.indexPathForSelectedRow{

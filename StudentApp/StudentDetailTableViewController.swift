@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StudentDetailTableViewController: UITableViewController {
+class StudentDetailTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var studentModel: Student!
     @IBOutlet weak var imageStudent: UIImageView!
@@ -33,72 +33,93 @@ class StudentDetailTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    // MARK: - Pick a picture
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        imageStudent.image = image
+        
+        picker.dismiss(animated: true, completion: nil)
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    //MARK : - User press choose image
+    @IBAction func btnChooseImgAction(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }else{
+                print("Camera not available")
+            }
+            
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    
+    // MARK: - User click button save
+    
+    @IBAction func btnSaveAction(_ sender: UIBarButtonItem) {
+        if textName.text!.isEmpty || textID.text!.isEmpty || textSchool.text!.isEmpty ||  textDescription.text!.isEmpty ||  textAge.text!.isEmpty{
+            //create alert
+            let alert = UIAlertController(title: "Notification", message: "Please enter full information", preferredStyle: UIAlertControllerStyle.alert);
+            //add an action
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil));
+            //show alert
+            self.present(alert, animated: true, completion: nil);
+        }
+        else {
+            studentModel.name = textName.text!
+            studentModel.id = textID.text!
+            studentModel.university = textSchool.text!
+            studentModel.age = textAge.text!
+            studentModel.descript = textDescription.text!
+            studentModel.image = imageStudent.image!
+        }
+        // Back To Management Student Screen
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - UITextFieldDelegate ( Keyboard will  disable when press return )
+    // User must set delegate from this textfield to this view
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //textFieldName.resignFirstResponder()
+        /*textFieldID.resignFirstResponder()
+         textFieldAge.resignFirstResponder()
+         textFieldUni.resignFirstResponder()*/
+        if textName.isEditing {
+            textName.resignFirstResponder()
+        } else if textSchool.isEditing {
+            textSchool.resignFirstResponder()
+        }
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    
+    // MARK: - UIScrollViewDelegate ( Keyboard will disable when scroll the UIView )
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        textName.resignFirstResponder()
+        textID.resignFirstResponder()
+        textAge.resignFirstResponder()
+        textSchool.resignFirstResponder()
+        textDescription.resignFirstResponder()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

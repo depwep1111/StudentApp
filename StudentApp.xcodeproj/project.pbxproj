@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F6563FD1EC31EC200E1C20B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6563FC1EC31EC200E1C20B /* Constants.swift */; };
 		768D9CEE1EC2E8D700AD280B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9CED1EC2E8D700AD280B /* AppDelegate.swift */; };
 		768D9CF01EC2E8D700AD280B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9CEF1EC2E8D700AD280B /* ViewController.swift */; };
 		768D9CF31EC2E8D700AD280B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768D9CF11EC2E8D700AD280B /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F6563FC1EC31EC200E1C20B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		768D9CEA1EC2E8D700AD280B /* StudentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768D9CED1EC2E8D700AD280B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		768D9CEF1EC2E8D700AD280B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				768D9CED1EC2E8D700AD280B /* AppDelegate.swift */,
 				768D9CEF1EC2E8D700AD280B /* ViewController.swift */,
 				768D9CF11EC2E8D700AD280B /* Main.storyboard */,
+				6F6563FC1EC31EC200E1C20B /* Constants.swift */,
 				768D9D211EC2FE2400AD280B /* StudentDetailTableViewController.swift */,
 				768D9D231EC2FE4900AD280B /* AddStudentTableViewController.swift */,
 				768D9D1F1EC2EE8700AD280B /* StudentTableViewCell.swift */,
@@ -281,6 +284,7 @@
 				768D9CEE1EC2E8D700AD280B /* AppDelegate.swift in Sources */,
 				768D9D241EC2FE4900AD280B /* AddStudentTableViewController.swift in Sources */,
 				768D9D1E1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift in Sources */,
+				6F6563FD1EC31EC200E1C20B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +531,7 @@
 				768D9D141EC2E8D700AD280B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768D9D151EC2E8D700AD280B /* Build configuration list for PBXNativeTarget "StudentAppTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +540,7 @@
 				768D9D171EC2E8D700AD280B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768D9D181EC2E8D700AD280B /* Build configuration list for PBXNativeTarget "StudentAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +549,7 @@
 				768D9D1A1EC2E8D700AD280B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
