@@ -14,6 +14,11 @@
 		768D9CF81EC2E8D700AD280B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768D9CF61EC2E8D700AD280B /* LaunchScreen.storyboard */; };
 		768D9D031EC2E8D700AD280B /* StudentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D021EC2E8D700AD280B /* StudentAppTests.swift */; };
 		768D9D0E1EC2E8D700AD280B /* StudentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D0D1EC2E8D700AD280B /* StudentAppUITests.swift */; };
+		768D9D1C1EC2E90200AD280B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D1B1EC2E90200AD280B /* Student.swift */; };
+		768D9D1E1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D1D1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift */; };
+		768D9D201EC2EE8700AD280B /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D1F1EC2EE8700AD280B /* StudentTableViewCell.swift */; };
+		768D9D221EC2FE2400AD280B /* StudentDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D211EC2FE2400AD280B /* StudentDetailTableViewController.swift */; };
+		768D9D241EC2FE4900AD280B /* AddStudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768D9D231EC2FE4900AD280B /* AddStudentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		768D9D091EC2E8D700AD280B /* StudentAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudentAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		768D9D0D1EC2E8D700AD280B /* StudentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAppUITests.swift; sourceTree = "<group>"; };
 		768D9D0F1EC2E8D700AD280B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		768D9D1B1EC2E90200AD280B /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Student.swift; path = ../Student.swift; sourceTree = "<group>"; };
+		768D9D1D1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangementStudentTableTableViewController.swift; sourceTree = "<group>"; };
+		768D9D1F1EC2EE8700AD280B /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		768D9D211EC2FE2400AD280B /* StudentDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailTableViewController.swift; sourceTree = "<group>"; };
+		768D9D231EC2FE4900AD280B /* AddStudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +110,13 @@
 				768D9CED1EC2E8D700AD280B /* AppDelegate.swift */,
 				768D9CEF1EC2E8D700AD280B /* ViewController.swift */,
 				768D9CF11EC2E8D700AD280B /* Main.storyboard */,
+				768D9D211EC2FE2400AD280B /* StudentDetailTableViewController.swift */,
+				768D9D231EC2FE4900AD280B /* AddStudentTableViewController.swift */,
+				768D9D1F1EC2EE8700AD280B /* StudentTableViewCell.swift */,
+				768D9D1D1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift */,
 				768D9CF41EC2E8D700AD280B /* Assets.xcassets */,
 				768D9CF61EC2E8D700AD280B /* LaunchScreen.storyboard */,
+				768D9D1B1EC2E90200AD280B /* Student.swift */,
 				768D9CF91EC2E8D700AD280B /* Info.plist */,
 			);
 			path = StudentApp;
@@ -260,7 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				768D9CF01EC2E8D700AD280B /* ViewController.swift in Sources */,
+				768D9D201EC2EE8700AD280B /* StudentTableViewCell.swift in Sources */,
+				768D9D221EC2FE2400AD280B /* StudentDetailTableViewController.swift in Sources */,
+				768D9D1C1EC2E90200AD280B /* Student.swift in Sources */,
 				768D9CEE1EC2E8D700AD280B /* AppDelegate.swift in Sources */,
+				768D9D241EC2FE4900AD280B /* AddStudentTableViewController.swift in Sources */,
+				768D9D1E1EC2EC6300AD280B /* MangementStudentTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
