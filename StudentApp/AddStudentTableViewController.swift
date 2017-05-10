@@ -10,6 +10,11 @@ import UIKit
 
 class AddStudentTableViewController: UITableViewController {
 
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtID: UITextField!
+    @IBOutlet weak var txtSchool: UITextField!
+    @IBOutlet weak var txtAge: UITextField!
+    @IBOutlet weak var imgSt: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
